@@ -11,4 +11,28 @@ router.post(
     categoryController.createCategory
 );
 
+// category list
+router.get(
+    "/list",
+    categoryController.categoryList
+);
+
+// delete-category
+router.delete(
+    "/delete/:categoryId",
+    categoryController.deleteRecord
+);
+
+// get category by id
+router.get(
+    "/get-details/:categoryId",
+    categoryController.getCategoryDetails
+);
+
+// update category by id
+router.put(
+    "/update-category/:categoryId",
+    categoryController.updateCategory
+);
+
 module.exports = router;

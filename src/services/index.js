@@ -1,1 +1,1 @@
-module.exports.userSercice = require("./category.service");
+module.exports.categoryService = require("./category.service");
