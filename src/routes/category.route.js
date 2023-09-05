@@ -9,4 +9,6 @@ router.post(
     "/create-category",
     validate(categoryValidation.createCategory),
     categoryController.createCategory
-)
+);
+
+module.exports = router;

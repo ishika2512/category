@@ -6,4 +6,4 @@ const router = express.Router();
 
 router.use("/category",categoryRoute);
 
-module.exports = require;
+module.exports = router;

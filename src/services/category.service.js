@@ -1,8 +1,8 @@
-const { Category } = require("../model");
+const { category } = require("../model");
 
 //  Create category
     const createCategory = async (reqBody) => {
-    return Category.create(reqBody);
+    return category.create(reqBody);
 };
 
 module.exports = {
