@@ -5,6 +5,13 @@ const createCategory = async (req, res) => {
   try {
     const reqBody = req.body;
 
+    if (req.file) {
+      reqBody.category_images = req.file.filename;
+    } 
+    else {
+      throw new Error("category image is required!");
+    }
+
     const categoryEx = await categoryService.getCategoryByName(reqBody.category_name);
     if (categoryEx) {
       throw new Error(`please add other category this ${categoryEx.category_name} category already created.`);
@@ -116,7 +123,7 @@ const updateCategory = async (req, res) => {
 
 module.exports = {
   createCategory,
-  categoryList, 
+  categoryList,
   deleteRecord,
   getCategoryDetails,
   updateCategory

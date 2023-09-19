@@ -2,11 +2,13 @@ const express = require("express");
 const { categoryValidation } = require("../validations");
 const { categoryController } = require("../controllers");
 const validate = require("../middlewares/validate");
+const { upload } = require("../middlewares/upload");
 const router = express.Router();
 
 // create category
 router.post(
     "/create-category",
+    upload.single("category_images"),
     validate(categoryValidation.createCategory),
     categoryController.createCategory
 );
